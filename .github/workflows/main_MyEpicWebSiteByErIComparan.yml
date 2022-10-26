@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_cf18359f8db64468a219e292f4e6902b }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_b66c10d2ea184633876054f94e2e392f }}
+        registry: https://mcr.mihttps://myepicwebsitebyericomparan.azurewebsites.netcrosoft.com/
+        username: ${{ secrets.AzureAppService_ContainerUsername_13cfca9f08a74f1db982baade1ac76db }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_2b922844d1694f87a453c525f2de2c28 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_cf18359f8db64468a219e292f4e6902b }}/appsvc/wordpress-alpine-php:${{ github.sha }}
+        tags: mcr.mihttps://myepicwebsitebyericomparan.azurewebsites.netcrosoft.com/${{ secrets.AzureAppService_ContainerUsername_13cfca9f08a74f1db982baade1ac76db }}/appsvc/wordpress-alpine-php:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'MyEpicWebSiteByErIComparan'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_7ec95711a4a24d9d9cff92e4f8869c96 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_cf18359f8db64468a219e292f4e6902b }}/appsvc/wordpress-alpine-php:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1936ee8af4c841b4ae89e3a5386fed9c }}
+        images: 'mcr.mihttps://myepicwebsitebyericomparan.azurewebsites.netcrosoft.com/${{ secrets.AzureAppService_ContainerUsername_13cfca9f08a74f1db982baade1ac76db }}/appsvc/wordpress-alpine-php:${{ github.sha }}'
